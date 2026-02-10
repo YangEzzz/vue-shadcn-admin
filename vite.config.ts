@@ -26,13 +26,14 @@ export default defineConfig({
     dirs: [
       'src/composables/**/*.ts',
       'src/constants/**/*.ts',
-      'src/stores/**/*.ts',
+      'src/store/**/*.ts',
     ],
     defaultExportByFilename: true,
     dts: 'src/types/auto-import.d.ts',
   }), Component({
     dirs: [
       'src/components',
+      'src/components/ui',
     ],
     collapseSamePrefixes: true,
     directoryAsNamespace: true,

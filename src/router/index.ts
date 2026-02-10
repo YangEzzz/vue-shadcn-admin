@@ -2,14 +2,38 @@ import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHistory } from 'vue-router'
 
 // 定义公共路由（不需要登录即可访问）
-const publicRoutes = ['/login', '/register', '/404']
+// const publicRoutes = ['/login', '/register', '/404']
 
 // 基础路由 - 不需要权限控制的路由
 const baseRoutes: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/dashboard',
+    component: () => import('@/layouts/index.vue'),
+    children: [
+      {
+        path: 'dashboard',
+        name: 'dashboard',
+        component: () => import('@/views/Dashboard/index.vue'),
+      },
+    ],
   },
+  {
+    path: '/tasks',
+    component: () => import('@/layouts/index.vue'),
+    children: [
+      {
+        path: '',
+        name: 'tasks',
+        component: () => import('@/views/Tasks/index.vue'),
+      },
+    ],
+  },
+  // {
+  //   path: '/login',
+  //   name: 'login',
+  //   component: () => import('@/views/login/index.vue'),
+  // },
 ]
 
 const router = createRouter({
