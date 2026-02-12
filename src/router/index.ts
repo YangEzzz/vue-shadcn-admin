@@ -29,11 +29,68 @@ const baseRoutes: RouteRecordRaw[] = [
       },
     ],
   },
-  // {
-  //   path: '/login',
-  //   name: 'login',
-  //   component: () => import('@/views/login/index.vue'),
-  // },
+  // Auth routes - 认证相关路由
+  {
+    path: '/auth',
+    children: [
+      {
+        path: 'sign-in',
+        name: 'sign-in',
+        component: () => import('@/views/Auth/SignIn.vue'),
+      },
+      {
+        path: 'sign-in-2',
+        name: 'sign-in-2',
+        component: () => import('@/views/Auth/SignIn2.vue'),
+      },
+      {
+        path: 'sign-up',
+        name: 'sign-up',
+        component: () => import('@/views/Auth/SignUp.vue'),
+      },
+      {
+        path: 'forgot-password',
+        name: 'forgot-password',
+        component: () => import('@/views/Auth/ForgotPassword.vue'),
+      },
+      {
+        path: 'otp',
+        name: 'otp',
+        component: () => import('@/views/Auth/Otp.vue'),
+      },
+    ],
+  },
+  // Error routes - 错误页面路由
+  {
+    path: '/errors',
+    children: [
+      {
+        path: '401',
+        name: 'error-401',
+        component: () => import('@/views/Errors/401.vue'),
+      },
+      {
+        path: '403',
+        name: 'error-403',
+        component: () => import('@/views/Errors/403.vue'),
+      },
+      {
+        path: '404',
+        name: 'error-404',
+        component: () => import('@/views/Errors/404.vue'),
+      },
+      {
+        path: '500',
+        name: 'error-500',
+        component: () => import('@/views/Errors/500.vue'),
+      },
+      {
+        path: '503',
+        name: 'error-503',
+        component: () => import('@/views/Errors/503.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({

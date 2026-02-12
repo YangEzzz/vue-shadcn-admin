@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useModal } from '@/composables/use-modal'
-
 import type { Task } from '../data/schema'
+
+import { useModal } from '@/composables/use-modal'
 
 import TaskForm from './task-form.vue'
 

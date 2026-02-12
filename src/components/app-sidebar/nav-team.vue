@@ -34,7 +34,7 @@ const route = useRoute()
 
 const { state, isMobile } = useSidebar()
 
-function isCollapsed(menu: NavItem): boolean {
+const isCollapsed = (menu: NavItem): boolean => {
   const pathname = route.path
   navMain.forEach((group) => {
     group.items.forEach((item) => {
@@ -46,7 +46,7 @@ function isCollapsed(menu: NavItem): boolean {
   return !!menu.items?.some(item => item.url === pathname)
 }
 
-function isActive(menu: NavItem): boolean {
+const isActive = (menu: NavItem): boolean => {
   const pathname = route.path
   if (menu.url) {
     return pathname === menu.url

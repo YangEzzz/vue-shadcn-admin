@@ -1,8 +1,8 @@
-import { BadgeHelp, BellDot, Boxes, Bug, Component, CreditCard, LayoutDashboard, ListTodo, Palette, PictureInPicture2, Podcast, Settings, SquareUserRound, User, Users, Wrench } from 'lucide-vue-next'
-
 import type { NavGroup } from '@/components/app-sidebar/types'
 
-export function useSidebar() {
+import { BellDot, Bug, CreditCard, LayoutDashboard, ListTodo, Palette, PictureInPicture2, SquareUserRound, User, Wrench } from 'lucide-vue-next'
+
+export const useSidebar = () => {
   const settingsNavItems = [
     { title: 'Profile', url: '/settings/', icon: User },
     { title: 'Account', url: '/settings/account', icon: Wrench },
@@ -17,9 +17,6 @@ export function useSidebar() {
       items: [
         { title: 'Dashboard', url: '/dashboard', icon: LayoutDashboard },
         { title: 'Tasks', url: '/tasks', icon: ListTodo },
-        { title: 'Apps', url: '/apps', icon: Boxes },
-        { title: 'Users', url: '/users', icon: Users },
-        { title: 'Ai Talk Example', url: '/ai-talk', icon: Podcast },
       ],
     },
     {
@@ -46,15 +43,6 @@ export function useSidebar() {
             { title: '500 | Internal Server Error', url: '/errors/500' },
             { title: '503 | Maintenance Error', url: '/errors/503' },
           ],
-        },
-      ],
-    },
-    {
-      title: 'Other',
-      items: [
-        { title: 'Settings', icon: Settings, items: settingsNavItems },
-        { title: 'SVA Components', url: '/sva-components', icon: Component },
-        { title: 'Help Center', url: '/help-center', icon: BadgeHelp,
         },
       ],
     },
