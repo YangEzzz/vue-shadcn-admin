@@ -1,9 +1,9 @@
 <script lang="ts" setup>
+import type { Task } from '../data/schema'
+
 import { toast } from 'vue-sonner'
 
 import { useModal } from '@/composables/use-modal'
-
-import type { Task } from '../data/schema'
 
 const props = defineProps<{
   task: Task

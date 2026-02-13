@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { VisArea, VisAxis, VisLine, VisXYContainer } from '@unovis/vue'
-
 import type { ChartConfig } from '@/components/ui/chart'
+
+import { VisArea, VisAxis, VisLine, VisXYContainer } from '@unovis/vue'
 
 import {
   Card,

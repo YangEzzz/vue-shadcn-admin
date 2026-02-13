@@ -1,10 +1,22 @@
 import antfu from '@antfu/eslint-config'
+import pluginQuery from '@tanstack/eslint-plugin-query'
 
 export default antfu({
+  type: 'app',
+  vue: true,
+  typescript: true,
+  formatters: {
+    css: true,
+    html: true,
+    markdown: 'prettier',
+  },
   ignores: [
     'src/components/ui/**',
     // ...globs
   ],
+  globals: {
+    definePage: 'readonly',
+  },
   rules: {
     // 禁用 antfu 的顶层函数规则（与箭头函数规则冲突）
     'antfu/top-level-function': 'off',
@@ -19,5 +31,12 @@ export default antfu({
     'unused-imports/no-unused-imports': 'warn',
     'unused-imports/no-unused-vars': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
+    'yaml/indent': ['error', 2],
+    'jsonc/indent': ['error', 2],
+    'vue/block-lang': ['warn', {
+      script: { lang: ['ts', 'tsx'] },
+    }],
+    'vue/valid-v-model': 'off',
   },
+  ...pluginQuery.configs['flat/recommended'],
 })

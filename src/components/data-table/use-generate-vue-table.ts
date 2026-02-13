@@ -1,11 +1,11 @@
 import type { ColumnFiltersState, ColumnPinningState, PaginationState, SortingState, TableOptionsWithReactiveData, VisibilityState } from '@tanstack/vue-table'
 
-import { getCoreRowModel, getFacetedRowModel, getFacetedUniqueValues, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
-
-import { DEFAULT_PAGE_SIZE } from '@/constants/pagination'
-import { valueUpdater } from '@/lib/utils'
-
 import type { DataTableProps } from './types'
+
+import { getCoreRowModel, getFacetedRowModel, getFacetedUniqueValues, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useVueTable } from '@tanstack/vue-table'
+import { DEFAULT_PAGE_SIZE } from '@/constants/pagination'
+
+import { valueUpdater } from '@/lib/utils'
 
 export function generateVueTable<T>(props: DataTableProps<T>) {
   const sorting = ref<SortingState>([])
